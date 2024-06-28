@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "f3c3a785-0f0f-4cb6-ab52-0f3e1e761fe3",
+		"name": "Pearson",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31250863",
+		"_collection_link": "https://universal-water-103564.postman.co/workspace/New-Team-Workspace~d99a0bb6-641e-4a27-ae66-021653b53e13/collection/31250863-f3c3a785-0f0f-4cb6-ab52-0f3e1e761fe3?action=share&source=collection_link&creator=31250863"
+	},
+	"item": [
+		{
+			"name": "Support-Requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/support-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"support-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Support-Requests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"example@gmail.com\",\r\n    \"description\": \"sample description is wriiten to test the endpoint sample description is wriiten to test the endpoint\",\r\n    \"dueDate\": \"2024-07-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/support-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"support-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid email address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"examplegmail\",\r\n    \"description\": \"sample description is wriiten to test the endpoint sample description is wriiten to test the endpoint\",\r\n    \"dueDate\": \"2024-07-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/support-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"support-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Description less than 100",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"example@gmail.com\",\r\n    \"description\": \"sample description is wriiten to test the endpoint sample description is wriiten to test the endpoint\",\r\n    \"dueDate\": \"2024-07-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/support-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"support-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Due date should be within an year",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"example@gmail.com\",\r\n    \"description\": \"sample description is wriiten to test the endpoint sample description is wriiten to test the endpoint\",\r\n    \"dueDate\": \"2024-07-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/support-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"support-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Due date after one year",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"example@gmail.com\",\r\n    \"description\": \"sample description is wriiten to test the endpoint sample description is wriiten to test the endpoint\",\r\n    \"dueDate\": \"2024-07-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/support-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"support-requests"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

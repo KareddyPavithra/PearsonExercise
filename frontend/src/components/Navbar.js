@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <div>
             <div className="bg-primary text-white text-center py-3">
-                <h2>Pearson Assessment</h2>
+                <h2>Technical Support Request System</h2>
             </div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container">
