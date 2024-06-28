@@ -18,7 +18,7 @@ public class SupportRequestController {
 
     @PostMapping
     public ResponseEntity<?> createRequest(@RequestBody SupportRequest request) {
-        // Validation
+
         if (!request.getEmail().contains("@")) {
             return ResponseEntity.badRequest().body("Invalid email address");
         }
@@ -35,6 +35,7 @@ public class SupportRequestController {
 
     @GetMapping
     public List<SupportRequest> getAllRequests() {
+
         return service.getAllRequests();
     }
 }
