@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import RequestForm from './components/RequestForm';
+import RequestList from './components/RequestList';
 
-function App() {
+const App = () => {
+  const [requests, setRequests] = useState([]);
+
+  const handleRequestSubmit = (newRequest) => {
+    setRequests([...requests, newRequest]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <h1>Technical Support Request System</h1>
+        <RequestForm onRequestSubmit={handleRequestSubmit} />
+        <RequestList />
+      </div>
   );
-}
+};
 
 export default App;
