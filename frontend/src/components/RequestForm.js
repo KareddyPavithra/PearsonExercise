@@ -11,7 +11,6 @@ const RequestForm = ({ onRequestSubmit }) => {
         e.preventDefault();
         setError('');
 
-        // Basic validation
         if (!email.includes('@')) {
             setError('Invalid email address');
             return;
@@ -42,22 +41,45 @@ const RequestForm = ({ onRequestSubmit }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Email:</label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            </div>
-            <div>
-                <label>Description:</label>
-                <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
-            </div>
-            <div>
-                <label>Due Date:</label>
-                <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} required />
-            </div>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <button type="submit">Submit</button>
-        </form>
+        <div className="container mt-4">
+            <h3>Submit Support Request</h3>
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        className="form-control"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="description" className="form-label">Description:</label>
+                    <textarea
+                        id="description"
+                        className="form-control"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="dueDate" className="form-label">Due Date:</label>
+                    <input
+                        type="date"
+                        id="dueDate"
+                        className="form-control"
+                        value={dueDate}
+                        onChange={(e) => setDueDate(e.target.value)}
+                        required
+                    />
+                </div>
+                {error && <p className="text-danger">{error}</p>}
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+        </div>
     );
 };
 

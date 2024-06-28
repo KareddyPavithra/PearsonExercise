@@ -1,3 +1,4 @@
+// src/components/RequestList.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -14,17 +15,26 @@ const RequestList = () => {
     }, []);
 
     return (
-        <div>
+        <div className="container mt-4">
             <h2>Support Requests</h2>
-            <ul>
-                {requests.map((request) => (
-                    <li key={request.id}>
-                        <p>Email: {request.email}</p>
-                        <p>Description: {request.description}</p>
-                        <p>Due Date: {request.dueDate}</p>
-                    </li>
+            <table className="table table-striped table-bordered">
+                <thead className="table-primary">
+                <tr>
+                    <th>Email</th>
+                    <th>Description</th>
+                    <th className="w-30">Due Date</th> {/* Adjust width as needed */}
+                </tr>
+                </thead>
+                <tbody>
+                {requests.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate)).map((request) => (
+                    <tr key={request.id}>
+                        <td>{request.email}</td>
+                        <td>{request.description}</td>
+                        <td>{new Date(request.dueDate).toLocaleDateString()}</td>
+                    </tr>
                 ))}
-            </ul>
+                </tbody>
+            </table>
         </div>
     );
 };
