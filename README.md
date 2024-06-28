@@ -38,6 +38,11 @@ The backend should start running on 'http://localhost:8080'
 
 The frontend should start running on 'http://localhost:3000'
 
+
+### Testing:
+Backend is tested with making REST API calls through postman for various scenarios.
+Postman collection is included in the repo. Frontend is manually tested. The screenshots are attached below.
+
 ### Screenshots of the application:
 
 Submit Requests Page
@@ -53,5 +58,15 @@ View Requests Page
 ![View Requests.png](Screenshots%2FView%20Requests.png)
 
 Validation Check
+
+Email validation:
+
+![Email validation.png](Screenshots%2FEmail%20validation.png)
+
+Description validation:
+
+![Description validation.png](Screenshots%2FDescription%20validation.png)
+
+Due date validation:
 
 ![Due date validation.png](Screenshots%2FDue%20date%20validation.png)
